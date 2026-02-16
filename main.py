@@ -21,6 +21,8 @@ def req_files():
     for file, url in Files.items():
         download_file(file, url)
 
+req_files()
+
 st.title("Movie Recommender System")
 
 def get_img(movie_id):
