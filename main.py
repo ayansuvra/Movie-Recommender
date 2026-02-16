@@ -5,8 +5,8 @@ import requests
 import os
 
 Files = {
-    "similarity.pkl": "https://drive.usercontent.google.com/download?id=1rFE3bIwyP259YAVPcLecM43ZIDHDHEXw"
-    "movies_dict.pkl": "https://drive.usercontent.google.com/download?id=1EBPizAfB-RmOBqDLu4lzpGrPH9P6xSr_"
+    "similarity.pkl": "https://huggingface.co/ayansuvra/Movie-Recommender-System/resolve/main/similarity.pkl"
+    "movies_dict.pkl": "https://huggingface.co/ayansuvra/Movie-Recommender-System/resolve/main/movies_dict.pkl"
 }
 def download_file(filename, url):
     if not os.path.exists(filename):
