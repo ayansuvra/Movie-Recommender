@@ -5,7 +5,7 @@ import requests
 import os
 
 Files = {
-    "similarity.pkl": "https://huggingface.co/ayansuvra/Movie-Recommender-System/resolve/main/similarity.pkl"
+    "similarity.pkl": "https://huggingface.co/ayansuvra/Movie-Recommender-System/resolve/main/similarity.pkl",
     "movies_dict.pkl": "https://huggingface.co/ayansuvra/Movie-Recommender-System/resolve/main/movies_dict.pkl"
 }
 def download_file(filename, url):
