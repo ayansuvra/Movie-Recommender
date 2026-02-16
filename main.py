@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import requests
 import os
+from dotenv import load_dotenv
 
 Files = {
     "similarity.pkl": "https://huggingface.co/ayansuvra/Movie-Recommender-System/resolve/main/similarity.pkl",
@@ -35,7 +36,7 @@ def poster_path(movie_id):
 
     headers = {
     "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDMzZDRmMTg3ODE5YmU1ZGU1NTljZjNkZDA5YTIxNSIsIm5iZiI6MTc3MTEwMTg0NC41ODIsInN1YiI6IjY5OTBkZTk0ODcwNjBhMDE2ZDEyM2Q5ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GI7jwT1x5eaQ_XRcFnkU5DaEwF3qsVJZ1VfZf3Tba4c"
+    "Authorization": os.getenv("AUTH")
     }
 
     response = requests.get(url, headers=headers).json()
