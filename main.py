@@ -2,6 +2,24 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import os
+
+Files = {
+    "similarity.pkl": "https://drive.usercontent.google.com/download?id=1rFE3bIwyP259YAVPcLecM43ZIDHDHEXw"
+    "movies_dict.pkl": "https://drive.usercontent.google.com/download?id=1EBPizAfB-RmOBqDLu4lzpGrPH9P6xSr_"
+}
+def download_file(filename, url):
+    if not os.path.exists(filename):
+        r = requests.get(url, stream=True)
+        r.raise_for_status()
+        with open(filename, "wb") as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
+
+def req_files():
+    for file, url in Files.items():
+        download_file(file, url)
 
 st.title("Movie Recommender System")
 
